@@ -16,7 +16,7 @@ export default class Warrior extends Archetype {
     return this._energyType;
   }
 
-  static createdRacesInstances():number {
+  static createdArchetypeInstances():number {
     return Warrior.instancesCreated;
   }
 }
