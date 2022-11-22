@@ -8,4 +8,16 @@ export default abstract class Archetype {
     this._special = 0;
     this._cost = 0;
   }
+
+  get name(): string {
+    return this._name;
+  }
+
+  get special(): number {
+    return this._special;
+  }
+
+  get cost(): number {
+    return this._cost;
+  }
 }
