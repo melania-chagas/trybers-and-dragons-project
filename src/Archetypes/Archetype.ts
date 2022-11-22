@@ -20,4 +20,9 @@ export default abstract class Archetype {
   get cost(): number {
     return this._cost;
   }
+
+  static createdArchetypeInstances(): number {
+    /* 'createdArchetypeInstances' retorna um número que corresponde à quantidade de instâncias criadas a partir das classes estendidas da classe abstrata 'Archetype' */
+    throw new Error('Not implemented');
+  }
 }
