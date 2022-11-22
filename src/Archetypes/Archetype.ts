@@ -1,3 +1,5 @@
+import { EnergyType } from '../Energy';
+
 export default abstract class Archetype {
   private _name: string;
   private _special: number;
@@ -25,4 +27,6 @@ export default abstract class Archetype {
     /* 'createdArchetypeInstances' retorna um número que corresponde à quantidade de instâncias criadas a partir das classes estendidas da classe abstrata 'Archetype' */
     throw new Error('Not implemented');
   }
+
+  abstract get energyType(): EnergyType;
 }
