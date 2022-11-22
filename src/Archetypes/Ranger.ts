@@ -3,12 +3,14 @@ import { EnergyType } from '../Energy';
 
 export default class Ranger extends Archetype {
   static instancesCreated = 0;
+  private readonly _energyType: EnergyType = 'stamina';
 
   constructor(
-    private _energyType: EnergyType = 'stamina',
     name: string,
+    special?: number,
+    cost?: number,
   ) {
-    super(name);
+    super(name, special, cost);
     Ranger.instancesCreated += 1;
   }
 

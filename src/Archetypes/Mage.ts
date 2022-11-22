@@ -2,21 +2,23 @@ import Archetype from './Archetype';
 import { EnergyType } from '../Energy';
 
 export default class Mage extends Archetype {
-  static instancesCreated = 0;
+  private static _instancesCreated = 0;
+  private readonly _energyType: EnergyType = 'mana';
 
   constructor(
-    private _energyType: EnergyType = 'mana',
     name: string,
+    special?: number,
+    cost?: number,
   ) {
-    super(name);
-    Mage.instancesCreated += 1;
+    super(name, special, cost);
+    Mage._instancesCreated += 1;
   }
 
-  get energyType() : EnergyType {
+  get energyType(): EnergyType {
     return this._energyType;
   }
 
-  static createdArchetypeInstances():number {
-    return Mage.instancesCreated;
+  static createdArchetypeInstances(): number {
+    return Mage._instancesCreated;
   }
 }
