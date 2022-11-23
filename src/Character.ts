@@ -16,7 +16,7 @@ export default class Character implements Fighter {
     name: string,
     private readonly _race: Race = new Elf(name, getRandomInt(1, 10)),
     private readonly _archetype: Archetype = new Mage(name),
-    
+
   ) {
     this._energy = {
       type_: this._archetype.energyType,
@@ -57,7 +57,7 @@ export default class Character implements Fighter {
   }
 
   receiveDamage(attackPoints: number): number {
-    const damage = (this.defense - attackPoints);
+    const damage = (attackPoints - this.defense);
 
     if (damage > 0) {
       this._lifePoints -= damage;
@@ -69,7 +69,7 @@ export default class Character implements Fighter {
       this._lifePoints = -1;
     }
 
-    return this._lifePoints;
+    return this.lifePoints;
   }
 
   attack(enemy: Fighter): void {
