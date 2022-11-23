@@ -14,7 +14,7 @@ export default class Dwarf extends Race {
     return this._maxLifePoints;
   }
 
-  static createdRacesInstances():number {
+  static createdRacesInstances(): number {
     return Dwarf.instancesCreated;
   }
 }
